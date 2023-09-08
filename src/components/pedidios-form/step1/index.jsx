@@ -1,23 +1,24 @@
-import React from 'react';
+import React from "react";
+//props son las propiedades que recibe el componente 
+const PedidosFormStep1 =(props)=>{
+    //destructurar 
+    const {clienteSeleccionado, setClienteSeleccionado} = props 
 
-const PedidosFormStep1 = (props) => {
 
-    const {clienteSeleccionado, setClienteSeleccionado} = props;
-
-    return(
+    return (
         <div className="row">
             <div className="col">
-                <label>Seleccionar Cliente</label>
-                <select className='form-control' value={clienteSeleccionado} onChange={(e)=>setClienteSeleccionado(e.target.value)}>
-                    <option>Seleccionar</option>
-                    <option value="daniel">Daniel</option>
-                    <option value="pedro">Pedro</option>
-                    <option value="pablo">Pablo</option>
-                    <option value="alejandro">Alejandro</option>
-                </select>
+                <label>Seleccionar cliente</label>
+                {/* traigo un evento que llama a la funcion con el valor del target del evento  */}
+                <select className="form-control" value={clienteSeleccionado} onChange={(e) => setClienteSeleccionado(e.target.value)}>
+                    <option>Seleccionar</option> 
+                    <option value="miguel">Miguel</option> 
+                    <option value="cristian">Cristian</option>  
+                    <option value="samuel">Samuel</option>  
+                    <option value="santiago">Santiago</option>     
+                </select>  
             </div>
-        </div>        
+        </div>
     )
 }
-
-export default PedidosFormStep1;
+export default PedidosFormStep1
