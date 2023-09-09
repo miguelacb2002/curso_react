@@ -1,22 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit"
+//acciones y reusers 
 
 const authSlice = createSlice({
-    name: 'authSlice',
-    initialState:{
+    name:'authslice',
+    initialState: {
         token: null,
         isAuth: false,
-        email: null 
-    }, 
-    reducers:{
-        setLoginAction: (state,action)=>{ // state permite acceder a mi estado inicial 
-            return {
-                state, 
-                token: action.payload.token,
-                isAuth: true, 
-                email: action.payload.email
+        email:null 
+    },
+    reducers: { // Permiten devolver un nuevo estado o modificar el estado actual
+        setLoginAction: (state, action)=>{
+            return{
+                ...state, 
+                token : action.payload.token,
+                isAuth: true,
+                email: action.payload.email,
+                password: action.payload.password
             }
         }
     }
 })
-export const {setLoginAction}=authSlice.actions
-export default authSlice.reducers
+
+export const {setLoginAction} = authSlice.actions;
+export default authSlice.reducer;

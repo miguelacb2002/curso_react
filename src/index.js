@@ -5,13 +5,13 @@ import AppRoutes from './AppRoutes';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { RouterProvider } from 'react-router-dom';
-//import { Provider } from 'react-redux';
-//import { store } from './redux/slices/store'
+import { store } from './redux/slices/store';
+import { Provider } from 'react-redux';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  </*Provider store={store}*/>
+  <Provider store={store}> {/* almacenar de forma global la info de la app */}
     <RouterProvider router={AppRoutes}/>
-  </>/*/Provider*/
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const HomeScreen = () => {
+    const authData= useSelector(state=> state.authSlice)
     return(
         <>
-            hola mundo Home Screen
+            El usuario autenticado es : {authData && authData.email} 
+            <br></br>
+            token: {authData && authData.token}
         </>
     )
 }
