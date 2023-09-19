@@ -13,9 +13,8 @@ const authSlice = createSlice({
             return{
                 ...state, 
                 token : action.payload.token,
-                isAuth: true,
-                email: action.payload.email,
-                password: action.payload.password
+                isAuth: action.payload.isAuth,
+                email: action.payload.email
             }
         }
     }

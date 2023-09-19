@@ -9,6 +9,7 @@ import ProductosScreen from './pages/productos'
 import CategoriasScreen from './pages/categorias'
 import ClientesScreen from './pages/clientes';
 import CategoriasClaseScreen from './pages/categorias/categorias-clase';
+import ClientesInsertScreen from './pages/clientesInsertar';
 /* importar layouts */
 import MainLayout from './layout/MainLayout';
 
@@ -25,7 +26,8 @@ import MainLayout from './layout/MainLayout';
         {path: 'categorias.legacy', element: <CategoriasClaseScreen/>},
         {path: 'pedidos', element: <PedidosScreen/>},
         {path: 'productos', element: <ProductosScreen/>},
-        {path: 'clientes', element: <ClientesScreen/>}      
+        {path: 'clientes', element: <ClientesScreen/>} ,
+        {path: 'clientes.insertar', element: <ClientesInsertScreen/>}    
       ]
     }
 

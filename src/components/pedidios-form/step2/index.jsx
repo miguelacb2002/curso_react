@@ -1,32 +1,19 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 
 const PedidosFormStep2 =(props)=>{
     const {productosSeleccionados,setProductosSeleccionados}= props
-
+    const [productos, setProductos]=useState([])
+    useEffect (()=>{
+        fetch("http://localhost:4000/api/productos")
+        .then(response=>response.json())
+        .then(data=>{
+            setProductos(data)/* cambiar el estado utilizando el API */
+        })
+        .catch(error=>{
+            console.error("Error al cargar los productos", error)
+        })
+    },[])
     
-    const productos = [
-        {
-            id: 1,
-            nombre: "perro Familiar",
-            imagen: "https://via.placeholder.com/200",
-            categorias:"perro",
-            precio: 20000
-        },
-        {
-            id: 2,
-            nombre: "perro con queso",
-            imagen: "https://via.placeholder.com/200",
-            categorias:"perro",
-            precio: 15000
-        },
-        {
-            id: 3,
-            nombre: "perro Queso tocineta",
-            imagen: "https://via.placeholder.com/200",
-            categorias:"perro",
-            precio: 17000
-        }        
-    ]
     const handleAddProducts = (productData)=>{
         setProductosSeleccionados([...productosSeleccionados, productData])
         alert ("Producto agregado exitosamente")
@@ -41,8 +28,8 @@ const PedidosFormStep2 =(props)=>{
                                 <div className="card" >
                                     <div className="card-body">
                                         <div className="card-title">{data.nombre}</div>
-                                        <img src={data.imagen} alt ="product image" className="img-fluid"/>
-                                        <p><b>Precio: {data.precio}</b></p>
+                                        <img src={"https://via.placeholder.com/200"} alt ="product image" className="img-fluid"/>
+                                        <p><b>Precio: {data.precioVenta}</b></p> {/* usar data.(nombra del schema) */}
                                         <button type= "button" onClick={()=>handleAddProducts(data)} className="btn btn-info">Agregar</button>
                                     </div>
                                 </div>

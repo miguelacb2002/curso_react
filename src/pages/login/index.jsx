@@ -11,8 +11,8 @@ const LoginScreen =() =>{
     const handleLogin =()=>{
         const payload={
             token:123456,
+            isAuth: true,
             email:"samuel@gmail.com",
-            password: "samuel123"
         }
         dispatch(setLoginAction(payload))
         navigate("/dashboard")

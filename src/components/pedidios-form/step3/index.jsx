@@ -2,8 +2,7 @@ import React from "react";
 
 const PedidosFormStep3 =(props)=>{
     //destructurar
-    const {productosSeleccionados,clienteSeleccionado} =props
-
+    const {productosSeleccionados,clienteSeleccionado}=props
     
     return (
         <>
@@ -30,8 +29,8 @@ const PedidosFormStep3 =(props)=>{
                                 <div className="card" >
                                     <div className="card-body">
                                         <div className="card-title">{data.nombre}</div>
-                                        <img src={data.imagen} alt ="product image" className="img-fluid"/>
-                                        <p><b>Precio: {data.precio}</b></p>
+                                        <img src={"https://via.placeholder.com/200"} alt ="product image" className="img-fluid"/>
+                                        <p><b>Precio: {data.precioVenta}</b></p> {/* usar data.(nombra del schema) */}
                                     </div>
                                 </div>
                             </div>
